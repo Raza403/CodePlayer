@@ -55,7 +55,6 @@
         textarea {
             resize: none;
             border-top: none;
-            
         }
 
         .panel {
@@ -93,8 +92,9 @@
     </div>
     <script type="text/javascript">
         function updatePage() {
-            $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() + "</style></head><body>" + $("#htmlpanel").val() + "</body></html>");
-        document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());        
+            $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#csspanel").val() +
+                "</style></head><body>" + $("#htmlpanel").val() + "</body></html>");
+            document.getElementById("outputpanel").contentWindow.eval($("#javascriptpanel").val());
         }
         $(".top").hover(function () {
             $(this).addClass("highlight");
@@ -108,7 +108,7 @@
             $("#" + panelid).toggleClass("hidden");
             var numOfActivePannels = 4 - $(".hidden").length;
             $(".panel").width(($(window).width() / numOfActivePannels) - 5);
-            
+
         });
         $(".panel").height($(window).height() - $("head").height() - 40);
         $(".panel").width(($(window).width() / 2) - 5);
